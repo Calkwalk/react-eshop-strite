@@ -1,0 +1,92 @@
+@import "../../css-config/mixins.scss";
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .footer-content{
+        width: 100%;
+        max-width: 1200px;
+        padding: 50px 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+        gap: 30px;
+        @include md {
+            justify-content: space-between;
+        }
+
+        .col {
+            max-width: 300px;
+            min-width: 200px;
+            .title {
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: rgba(0, 0, 0, 0.9)
+            }
+            .text {
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.6);
+                cursor: pointer;
+            }
+            ul {
+                list-style-type: none;
+                display:  flex;
+                flex-direction: column;
+                gap: 8px;
+                li {
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 0.6);
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    svg {
+                        flex-shrink: 0;
+                        font-size: 14px;
+                        margin-right: 10px;
+                        margin-top: 4px;
+                        color: rgba(0, 0, 0, 0.6)
+                    }
+                }
+                li:hover {
+                    color: #8e2de2;
+                    font-weight: 600;
+                    text-decoration-line: underline;
+                    text-decoration-color: #8e2de2;
+                }
+            }
+        }
+    }
+
+    .bottom-bar {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        .bottom-bar-content {
+            width: 100%;
+            max-width: 1200px;
+
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            text-align: center;
+            gap: 10px;
+            margin:  0 auto;
+            @include lg {
+                flex-direction:  row;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .text {
+                font-size: 14px;
+                text-transform: uppercase;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}

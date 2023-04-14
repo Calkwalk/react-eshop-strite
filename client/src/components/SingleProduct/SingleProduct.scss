@@ -1,0 +1,186 @@
+@import "../../css-config/mixins.scss";
+
+.single-product-main-content {
+    margin: 20px 0;
+    @include md {
+        margin: 75px 0;
+    }
+    .layout {
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        @include md {
+            max-width: 1200px;
+        }
+        .single-product-page {
+            display: flex;
+            flex-direction: column;
+            @include md {
+                flex-direction: row;
+            }
+            .left {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.05);
+                flex-shrink: 0;
+                @include md {
+                    width: 50%;
+                    height: width;
+                }
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .adding {
+                animation: shake 1.0s ease forwards;
+            }
+            .right {
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+                @include md {
+                    padding: 0 35px;
+                }
+                .name {
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 20px;
+                    @include md {
+                        font-size: 24px;
+                        line-height: 32px;
+                    }
+                }
+                .price {
+                    color: red;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    @include md {
+                        font-size: 24px;
+                    }
+                    &::before{
+                        content: "¥";
+                        font-size: 0.6em;
+                        margin-right: 4px;
+                    }
+                    &::after{
+                        content: ".00";
+                        font-size: 0.7em;
+                        margin-right: 4px;
+                    }
+                }
+                .desc{
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 20px;
+                    color: #6b6b6b;
+                    @include md {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+                .cart-buttons {
+                    display: flex;
+                    flex-direction: row;
+                    @include md {
+                        margin-top: 30px;
+                    }
+
+                    .quantity-buttons {
+                        width: fit-content;
+                        display: flex;
+                        border: 2px solid rgba(0, 0, 0, 0.2);
+                        margin-right: 10px;
+                        height: 50px;
+                        span {
+                            font-size: 18px;
+                            width: 40px;
+                            color: #6b6b6b;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            user-select: none;
+                            &:nth-child(2) {
+                                width: 60px;
+                                border-left: 2px solid rgba(0, 0, 0, 0.2);
+                                border-right: 2px solid rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+                    .add-to-cart-button {
+                        outline: none;
+                        border: none;
+                        height: 50px;
+                        width: 180px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        color: white;
+                        background-color: #8e2de2;
+                        // border-bottom: 3px solid #6516aa;
+                        flex-grow: 1;
+                        @include md {
+                            flex-grow: unset;
+                        }
+                        &:hover {
+                            background-color: #6516aa;
+                        }
+                    }
+                }
+                .divider {
+                    margin: 20px 0;
+                    height: 1px;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+
+                .info-item {
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: flex-start;
+                    .text-bold {
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin-right: 5px;
+                    }
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #6b6b6b;
+                        cursor: pointer;
+                    }
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                        margin: 0 5px;
+                        border-radius: 50%;
+                        padding: 4px;
+                        font-size: 16px;
+                        color: white;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        &:hover {
+                            background-color: #6516aa;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+}
+@keyframes shake {
+    0%  { 
+        transform:  translateX(0) translateY(0) scale(1); border-radius: 50%;
+    }
+    // 30% { transform: scale(1.2); }
+    // 40% { transform: scale(0.8); }
+    50% { transform: scale(0.3);}
+    // 60% { transform: scale(0.9); }
+    // 70% { transform: scale(1.1); }
+    // 80% { transform: scale(0.95);}
+    // 90% { transform: scale(1.05);}
+    100%{ 
+        transform: translateX(200%) translateY(-100%) scale(0.1);
+   }
+}
